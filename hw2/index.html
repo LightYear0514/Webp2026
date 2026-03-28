@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  /* 延用之前的表格樣式 */
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  tr:nth-child(even) { background-color: #f2f2f2; }
+  tr:hover { background-color: #ddd; }
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+  /* 簡易 Popover 樣式 */
+  .popover-content {
+    display: none;
+    background: #ffffcc;
+    border: 1px solid #999;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+<h1>資工選課表</h1>
+
+<table id="csie">
+  <tr>
+    <th>開課單位</th>
+    <th>課程名稱</th>
+    <th>授課教師</th>
+  </tr>
+  <tr>
+    <td>資工系</td>
+    <td>物件導向軟體設計</td>
+    <td onclick="showInfo(this)">黃崇源</td>
+  </tr>
+  <tr>
+    <td>資工系</td>
+    <td>計算機網路實驗</td>
+    <td onclick="showInfo(this)">李春良</td>
+  </tr>
+  <tr>
+    <td>資工系</td>
+    <td>作業系統實務</td>
+    <td onclick="showInfo(this)">張哲維</td>
+  </tr>
+    <tr>
+    <td>資工系</td>
+    <td>生物統計</td>
+    <td onclick="showInfo(this)">陳光武</td>
+  </tr>
+    <tr>
+    <td>資工系</td>
+    <td>通訊系統</td>
+    <td onclick="showInfo(this)">陳仁暉</td>
+  </tr>
+    <tr>
+    <td>資工系</td>
+    <td>軟硬體專題(2)</td>
+    <td onclick="showInfo(this)">魏志達</td>
+  </tr>
+</table>
+
+<br>
+<button onclick="changeResult()">Change</button>
+
+<script>
+  // 點擊按鈕更改內容的功能 [cite: 2920, 2921]
+  function changeResult() {
+    var myTable = document.getElementById("csie");
+    // 將第 1 列第 2 欄的內容改為李春良 [cite: 2922]
+    myTable.rows[1].cells[2].innerHTML = "李春良";
+  }
+
+  // 實作簡易彈出視窗功能 [cite: 2893]
+  function showInfo(element) {
+    alert("課程資訊：\n年級班別：3-甲\n科目代號(學分)：IT3004(3)");
+  }
+</script>
+
+</body>
+</html>
