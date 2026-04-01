@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ex4 Christmas Tree</title>
+</head>
+<body>
+    <h1>F12Console </h1>
+
+    <script>
+        // 將你的 JavaScript 程式碼放在這裡
+        function repeatchar(n, arg_char) {
+            let res = "";
+            for (let i = 0; i < n; i++) {
+                res += arg_char;
+            }
+            return res;
+        }
+
+        function printTreeTop(n) {
+            for (let i = 1; i <= n; i++) {
+                let spaces = repeatchar(n - i, ' ');
+                let stars = repeatchar(2 * i - 1, '*');
+                console.log(spaces + stars);
+            }
+        }
+
+        function printTreeBottom(n) {
+            for (let i = 0; i < 3; i++) {
+                let spaces = repeatchar(n - 1, ' ');
+                console.log(spaces + "*");
+            }
+        }
+
+        function tree(n) {
+            printTreeTop(n);
+            printTreeBottom(n);
+        }
+
+        // 執行畫出聖誕樹
+        tree(4);
+    </script>
+</body>
+</html>
